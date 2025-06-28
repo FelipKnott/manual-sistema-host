@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual completo do Sistema Host - Alphatech Sistemas</title>
+    <link rel="stylesheet" href="manual_host_style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header estilo Gdoor -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="/images/alphatech_sistema.jpeg" alt="Alphatech Sistemas" class="logo"> onerror="this.style.display='none'"
+                    <span class="logo-text">Alphatech Sistemas</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#cadastro">Cadastro</a></li>
+                    <li><a href="#vendas">Vendas</a></li>
+                    <li><a href="#financeiro">Financeiro</a></li>
+                    <li><a href="#relatorios">Relatórios</a></li>
+                    <li><a href="#configuracoes">Configurações</a></li>
+                    <li><a href="#suporte">Suporte</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Manual completo do Sistema Host</h1>
+                <p>Soluções completas para gestão empresarial, controle de vendas, emissão fiscal e relatórios gerenciais.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('inicio')">Começar</button>
+                    <button class="btn-secondary" onclick="scrollToSection('suporte')">Suporte</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Seção Início -->
+        <section id="inicio" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Funcionalidades Principais</h2>
+                    <p>Conheça as principais ferramentas do Sistema Host</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-modal="emissor-nfe">
+                        <div class="card-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3>Emissor NFe</h3>
+                        <p>Emissão de notas fiscais eletrônicas com validação automática</p>
+                    </div>
+                    <div class="feature-card" data-modal="dav">
+                        <div class="card-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>DAV</h3>
+                        <p>Documento auxiliar de venda para controle de vendas</p>
+                    </div>
+                    <div class="feature-card" data-modal="op-fiscal">
+                        <div class="card-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Operações Fiscais</h3>
+                        <p>Gestão completa de operações fiscais e tributárias</p>
+                    </div>
+                    <div class="feature-card" data-modal="backup">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Backup</h3>
+                        <p>Sistema de backup automático para segurança dos dados</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Cadastro -->
+        <section id="cadastro" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Cadastros</h2>
+                    <p>Gestão completa de cadastros do sistema</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-modal="clientes">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Clientes</h3>
+                        <p>Cadastro completo de clientes com dados fiscais e comerciais</p>
+                    </div>
+                    <div class="feature-card" data-modal="produtos">
+                        <div class="card-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h3>Produtos</h3>
+                        <p>Gestão de produtos com códigos de barras e preços</p>
+                    </div>
+                    <div class="feature-card" data-modal="vendedores">
+                        <div class="card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Vendedores</h3>
+                        <p>Cadastro e gestão de vendedores e comissões</p>
+                    </div>
+                    <div class="feature-card" data-modal="tecnicos">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Técnicos</h3>
+                        <p>Controle de técnicos para serviços e manutenções</p>
+                    </div>
+                    <div class="feature-card" data-modal="estrangeiros">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Clientes Estrangeiros</h3>
+                        <p>Cadastro específico para clientes estrangeiros</p>
+                    </div>
+                    <div class="feature-card" data-modal="contador">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Dados Contador</h3>
+                        <p>Configuração de dados do contador responsável</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Vendas -->
+        <section id="vendas" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Vendas</h2>
+                    <p>Controle completo do processo de vendas</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-modal="vendas-periodo">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Vendas por Período</h3>
+                        <p>Consulta de vendas realizadas em períodos específicos</p>
+                    </div>
+                    <div class="feature-card" data-modal="desconto-venda">
+                        <div class="card-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3>Desconto na Venda</h3>
+                        <p>Aplicação de descontos em vendas e orçamentos</p>
+                    </div>
+                    <div class="feature-card" data-modal="desconto-item">
+                        <div class="card-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h3>Desconto por Item</h3>
+                        <p>Desconto específico em itens individuais da venda</p>
+                    </div>
+                    <div class="feature-card" data-modal="orcamentos">
+                        <div class="card-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3>Orçamentos</h3>
+                        <p>Criação e gestão de orçamentos para clientes</p>
+                    </div>
+                    <div class="feature-card" data-modal="cancelar-venda">
+                        <div class="card-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <h3>Cancelar Venda</h3>
+                        <p>Cancelamento de vendas e documentos fiscais</p>
+                    </div>
+                    <div class="feature-card" data-modal="importar-venda">
+                        <div class="card-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Importar Venda</h3>
+                        <p>Importação de vendas do DAV para NFCe</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Financeiro -->
+        <section id="financeiro" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Financeiro</h2>
+                    <p>Gestão financeira completa</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-modal="contas-receber">
+                        <div class="card-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Contas a Receber</h3>
+                        <p>Gestão de contas a receber e recebimentos</p>
+                    </div>
+                    <div class="feature-card" data-modal="form-boleto">
+                        <div class="card-icon">
+                            <i class="fas fa-barcode"></i>
+                        </div>
+                        <h3>Formulário de Boleto</h3>
+                        <p>Configuração e emissão de boletos bancários</p>
+                    </div>
+                    <div class="feature-card" data-modal="conf-boleto">
+                        <div class="card-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>Configurar Boleto</h3>
+                        <p>Configurações para emissão de boletos</p>
+                    </div>
+                    <div class="feature-card" data-modal="new-boleto">
+                        <div class="card-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3>Novo Boleto</h3>
+                        <p>Criação de novos boletos bancários</p>
+                    </div>
+                    <div class="feature-card" data-modal="forma-pagamento">
+                        <div class="card-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Forma de Pagamento</h3>
+                        <p>Configuração de formas de pagamento</p>
+                    </div>
+                    <div class="feature-card" data-modal="juros-multas">
+                        <div class="card-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Juros e Multas</h3>
+                        <p>Configuração de juros e multas em contas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Relatórios -->
+        <section id="relatorios" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Relatórios</h2>
+                    <p>Relatórios gerenciais e análises</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-modal="relatorio-vendas">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Relatório de Vendas</h3>
+                        <p>Relatórios detalhados de vendas por período</p>
+                    </div>
+                    <div class="feature-card" data-modal="produtos-vendidos">
+                        <div class="card-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3>Produtos Vendidos</h3>
+                        <p>Relatório de produtos mais vendidos</p>
+                    </div>
+                    <div class="feature-card" data-modal="movimento-produtos">
+                        <div class="card-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>Movimento de Produtos</h3>
+                        <p>Controle de movimento de produtos no estoque</p>
+                    </div>
+                    <div class="feature-card" data-modal="curva-abc">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Curva ABC</h3>
+                        <p>Análise de produtos por importância comercial</p>
+                    </div>
+                    <div class="feature-card" data-modal="relatorio-raio">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Relatório Raio</h3>
+                        <p>Relatório de vendas por região geográfica</p>
+                    </div>
+                    <div class="feature-card" data-modal="inventario">
+                        <div class="card-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Inventário</h3>
+                        <p>Controle de inventário e estoque</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Configurações -->
+        <section id="configuracoes" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Configurações</h2>
+                    <p>Configurações do sistema</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-modal="conf-certificado">
+                        <div class="card-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Configurar Certificado</h3>
+                        <p>Configuração de certificados digitais</p>
+                    </div>
+                    <div class="feature-card" data-modal="select-banco">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Selecionar Banco</h3>
+                        <p>Configuração de banco de dados</p>
+                    </div>
+                    <div class="feature-card" data-modal="config-etiqueta">
+                        <div class="card-icon">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <h3>Configurar Etiqueta</h3>
+                        <p>Configuração de impressão de etiquetas</p>
+                    </div>
+                    <div class="feature-card" data-modal="config-checkout">
+                        <div class="card-icon">
+                            <i class="fas fa-cash-register"></i>
+                        </div>
+                        <h3>Configurar Checkout</h3>
+                        <p>Configurações de checkout e pagamento</p>
+                    </div>
+                    <div class="feature-card" data-modal="gera-balanca">
+                        <div class="card-icon">
+                            <i class="fas fa-weight-hanging"></i>
+                        </div>
+                        <h3>Gerar Balança</h3>
+                        <p>Configuração de balanças e pesagem</p>
+                    </div>
+                    <div class="feature-card" data-modal="medidas-etiqueta">
+                        <div class="card-icon">
+                            <i class="fas fa-ruler"></i>
+                        </div>
+                        <h3>Medidas de Etiqueta</h3>
+                        <p>Configuração de medidas para etiquetas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Suporte -->
+        <section id="suporte" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Suporte</h2>
+                    <p>Suporte técnico especializado</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-modal="backup-sistema">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Backup do Sistema</h3>
+                        <p>Realizar backup completo do sistema</p>
+                    </div>
+                    <div class="feature-card" data-modal="contato-suporte">
+                        <div class="card-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Contato Suporte</h3>
+                        <p>Informações para contato com suporte técnico</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer estilo Gdoor -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Alphatech Sistemas</h3>
+                    <p>Soluções completas para gestão empresarial</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contatos</h4>
+                    <p><i class="fas fa-phone"></i> (81) 99594-5522</p>
+                    <p><i class="fab fa-whatsapp"></i> (81) 99594-5522</p>
+                    <p><i class="fas fa-clock"></i> Seg-Sex: 8h-18h | Sáb-Dom: 8h-14h</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Endereço</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Recife, PE</p>
+                    <p>Brasil</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Alphatech Sistemas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para informações detalhadas -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Conteúdo será carregado dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="manual_host_script.js"></script>
+</body>
+</html> 
+
+
+
+
+

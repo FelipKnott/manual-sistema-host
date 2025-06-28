@@ -1,0 +1,110 @@
+MANUAL COMPLETO DO SISTEMA HOST - ALPHATECH SISTEMAS
+====================================================
+
+ESTRUTURA DOS ARQUIVOS:
+- Manual_Completo_Sistema_Host.html    (Arquivo principal)
+- manual_host_style.css                (Estilos com cores Alphatech)
+- manual_host_script.js                (Interatividade e modal)
+- images/                              (Pasta com imagens)
+- INSTRUCOES_MANUAL_ALPHATECH.txt      (Este arquivo)
+
+COMO USAR:
+1. Abra o arquivo "Manual_Completo_Sistema_Host.html" em qualquer navegador moderno
+2. Certifique-se de que todos os arquivos estejam na mesma pasta
+3. O manual é totalmente responsivo e funciona em:
+   - Computadores desktop
+   - Tablets
+   - Smartphones
+
+NOVAS FUNCIONALIDADES IMPLEMENTADAS:
+
+🎯 CARDS INTERATIVOS:
+- Clique em qualquer card para abrir informações detalhadas
+- Modal com passo a passo de cada funcionalidade
+- Imagens ilustrativas em cada modal
+- Fechamento com X, ESC ou clicando fora
+
+🏢 IDENTIDADE VISUAL ALPHATECH:
+- Cores corporativas da Alphatech Sistemas
+- Logo da empresa no cabeçalho
+- Design profissional e moderno
+- Gradientes e efeitos visuais
+
+📞 SEÇÃO DE SUPORTE ATUALIZADA:
+- Informações completas da Alphatech Sistemas
+- Telefone: (81) 99594-5522
+- WhatsApp: (81) 99594-5522
+- Horários de atendimento:
+  * Segunda a Sexta: 8h às 18h
+  * Sábados e Domingos: 8h às 14h
+- Link direto para WhatsApp
+- Removidas opções desnecessárias
+
+🎨 DESIGN MODERNO:
+- Fonte Inter (minimalista e legível)
+- Cores da Alphatech Sistemas:
+  * Azul primário: #1e40af
+  * Azul secundário: #3b82f6
+  * Azul accent: #60a5fa
+- Efeitos de glassmorphism
+- Animações suaves e profissionais
+- Layout em grid responsivo
+
+📱 RESPONSIVIDADE TOTAL:
+- Menu lateral fixo (desktop)
+- Menu colapsável (mobile)
+- Adaptação perfeita para todos os dispositivos
+- Modal responsivo
+
+SEÇÕES INCLUÍDAS:
+1. INÍCIO - Visão geral do sistema
+2. CADASTRO - Clientes, produtos, vendedores, técnicos
+3. VENDAS - Controle de vendas, descontos, orçamentos
+4. FINANCEIRO - Contas a receber, boletos, pagamentos
+5. RELATÓRIOS - Relatórios de vendas, produtos, inventário
+6. CONFIGURAÇÕES - Certificados, banco, etiquetas
+7. SUPORTE - Backup e contato Alphatech Sistemas
+
+EFEITOS VISUAIS:
+- Cards com hover effects
+- Animações de entrada
+- Transições suaves
+- Efeitos de profundidade
+- Modal com backdrop blur
+
+PERSONALIZAÇÃO:
+Para adicionar novas seções:
+1. Adicione o link no menu lateral (sidebar)
+2. Crie a seção correspondente no HTML
+3. Adicione cards com atributo data-modal
+4. Inclua dados no objeto modalData no JavaScript
+
+Para adicionar imagens:
+1. Coloque a imagem na pasta "images/"
+2. Referencie no HTML: <img src="images/nome-da-imagem.jpg">
+
+COMPATIBILIDADE:
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
+- Mobile browsers modernos
+
+PERFORMANCE:
+- CSS e JS separados para melhor carregamento
+- Imagens otimizadas
+- Animações com GPU acceleration
+- Modal com lazy loading
+
+SUPORTE ALPHATECH SISTEMAS:
+- Telefone: (81) 99594-5522
+- WhatsApp: (81) 99594-5522
+- Horário: Seg-Sex 8h-18h, Sáb-Dom 8h-14h
+- Suporte técnico especializado
+- Atendimento remoto disponível
+
+======================================================
+Manual desenvolvido pela Alphatech Sistemas - 2024
+Cores e identidade visual personalizadas
+Funcionalidades interativas e responsivas
+====================================================== 

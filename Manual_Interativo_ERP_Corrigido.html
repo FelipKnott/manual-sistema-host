@@ -1,0 +1,869 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Completo do Sistema ERP</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-sidebar {
+    width: 300px;
+    background: #f8f9fa;
+    border-right: 1px solid #e9ecef;
+    height: calc(100vh - 200px);
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+.nav-sidebar h3 {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.nav-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-sidebar li {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.nav-sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: #495057;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-sidebar a:hover {
+    background: #e9ecef;
+    color: #2c3e50;
+    border-left-color: #3498db;
+    transform: translateX(5px);
+}
+
+.nav-sidebar a.active {
+    background: #3498db;
+    color: white;
+    border-left-color: #2980b9;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+
+.section {
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section h2 {
+    color: #2c3e50;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #e74c3c;
+}
+
+.section h3 {
+    color: #34495e;
+    font-size: 1.5em;
+    margin: 30px 0 15px 0;
+    padding-left: 15px;
+    border-left: 4px solid #3498db;
+}
+
+.step-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 5px solid #3498db;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.step-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.step-box ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.step-box li {
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #3498db;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.feature-card h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.tip-box {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: 1px solid #28a745;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.tip-box::before {
+    content: 'Dica';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.warning-box {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    border: 1px solid #dc3545;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.warning-box::before {
+    content: 'Atencao';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.image-container {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px dashed #dee2e6;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.02);
+}
+
+.image-caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.table-modern {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.table-modern th {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.table-modern td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.table-modern tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.table-modern tr:hover {
+    background: #e9ecef;
+    transition: background 0.3s ease;
+}
+
+.code-block {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    margin: 15px 0;
+    overflow-x: auto;
+    border-left: 4px solid #3498db;
+}
+
+.search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #e9ecef;
+    border-radius: 2px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .nav-sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+}
+
+/* AnimaÃ§Ãµes */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.section {
+    animation: slideIn 0.6s ease forwards;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Manual Completo do Sistema ERP</h1>
+            <p>Guia completo de funcionalidades e configuracoes</p>
+        </div>
+        
+        <div style="display: flex;">
+            <nav class="nav-sidebar">
+                <h3>Navegacao</h3>
+                <ul>
+                    <li><a href="#introducao">Introducao</a></li>
+                    <li><a href="#etiquetas">Etiquetas Personalizadas</a></li>
+                    <li><a href="#balanca">Configuracao de Balanca</a></li>
+                    <li><a href="#financeiro">Modulo Financeiro</a></li>
+                    <li><a href="#relatorios">Relatorios</a></li>
+                    <li><a href="#backup">Backup e Seguranca</a></li>
+                    <li><a href="#dicas">Dicas e Truques</a></li>
+                </ul>
+            </nav>
+            
+            <main class="content">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar no manual...">
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                
+                <div id="introducao" class="section">
+                    <h2>Introducao ao Sistema</h2>
+                    <p>Este manual abrange todas as funcionalidades principais do sistema ERP, incluindo modulos fiscais, configuracoes de equipamentos e operacoes especiais.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4>Modulos Principais</h4>
+                            <ul>
+                                <li>Gestao Fiscal (NFe/NFCe)</li>
+                                <li>Controle de Estoque</li>
+                                <li>Relatorios Gerenciais</li>
+                                <li>Configuracoes de Equipamentos</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Funcionalidades Avancadas</h4>
+                            <ul>
+                                <li>Etiquetas Personalizadas</li>
+                                <li>Integracao com Balancas</li>
+                                <li>Operacoes de Devolucao</li>
+                                <li>Referenciamento de Documentos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="etiquetas" class="section">
+                    <h2>Etiquetas Personalizadas</h2>
+                    <p>Crie etiquetas personalizadas para produtos com informacoes especificas da sua empresa.</p>
+                    
+                    <div class="step-box">
+                        <h3>Como Criar uma Etiqueta Personalizada:</h3>
+                        <ol>
+                            <li>Acesse o menu "Configuracoes > Etiquetas"</li>
+                            <li>Clique em "Nova Etiqueta"</li>
+                            <li>Defina as dimensoes da etiqueta (largura x altura)</li>
+                            <li>Adicione os campos desejados:
+                                <ul>
+                                    <li>Codigo do produto</li>
+                                    <li>Descricao</li>
+                                    <li>Preco</li>
+                                    <li>Codigo de barras</li>
+                                    <li>Logo da empresa</li>
+                                </ul>
+                            </li>
+                            <li>Configure a fonte e tamanho dos textos</li>
+                            <li>Posicione os elementos na etiqueta</li>
+                            <li>Salve a etiqueta com um nome descritivo</li>
+                            <li>Teste a impressao com um produto</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/nova-etiqueta.jpg" alt="Criando Nova Etiqueta"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 1: Criando uma nova etiqueta personalizada</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/medidas-etiqueta.jpg" alt="Configurando Medidas da Etiqueta"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 2: Configurando as medidas da etiqueta</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/adicionar-objeto-etiqueta.jpg" alt="Adicionando Objetos na Etiqueta"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 3: Adicionando objetos e campos na etiqueta</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/config-etiqueta.jpg" alt="Configurando Etiqueta"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 4: Configuracao detalhada da etiqueta</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/salvar-etiqueta.jpg" alt="Salvando Etiqueta"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 5: Salvando a etiqueta personalizada</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/exemplo-etiqueta-gondola.jpg" alt="Exemplo de Etiqueta para Gondola"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 6: Exemplo de etiqueta configurada para gondola</div>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <strong>Dica:</strong> Use codigos de barras EAN-13 ou Code 128 para melhor compatibilidade com leitores de codigo de barras.
+                    </div>
+                </div>
+                
+                <div id="balanca" class="section">
+                    <h2>Configuracao de Balanca</h2>
+                    <p>Configure balancas de checkout e balancas de peso para integracao automatica com o sistema.</p>
+                    
+                    <div class="step-box">
+                        <h3>Configurar Balanca de Checkout:</h3>
+                        <ol>
+                            <li>Acesse "Configuracoes > Equipamentos > Balanca"</li>
+                            <li>Selecione o tipo de balanca (Toledo, Filizola, etc.)</li>
+                            <li>Configure a porta de comunicacao (COM1, COM2, etc.)</li>
+                            <li>Defina a velocidade de comunicacao (baud rate)</li>
+                            <li>Configure o protocolo de comunicacao</li>
+                            <li>Teste a conexao com a balanca</li>
+                            <li>Salve as configuracoes</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/config_checkout.png" alt="Configuracao de Balanca de Checkout"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 7: Configuracao de balanca de checkout</div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h3>Gerando Arquivo para Balanca:</h3>
+                        <ol>
+                            <li>Acesse "Relatorios > Balanca"</li>
+                            <li>Selecione os produtos que serao enviados</li>
+                            <li>Escolha o formato do arquivo (TXT, CSV)</li>
+                            <li>Configure o mapeamento dos campos</li>
+                            <li>Gere o arquivo</li>
+                            <li>Transfira o arquivo para a balanca via cabo ou pendrive</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/gera-balanca.jpg" alt="Gerando Arquivo para Balanca"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 8: Gerando arquivo para transferencia na balanca</div>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <strong>Atencao:</strong> Certifique-se de que a balanca esteja desligada antes de conectar ou desconectar cabos de comunicacao.
+                    </div>
+                </div>
+                
+                <div id="financeiro" class="section">
+                    <h2>Modulo Financeiro</h2>
+                    <p>Gestao completa de contas a pagar e receber com controles avancados.</p>
+                    
+                    <div class="step-box">
+                        <h3>Contas a Receber:</h3>
+                        <ol>
+                            <li>Acesse "Financeiro > Contas a Receber"</li>
+                            <li>Visualize todas as contas pendentes</li>
+                            <li>Use filtros para organizar por cliente, data ou valor</li>
+                            <li>Realize baixas de contas conforme recebimentos</li>
+                            <li>Configure juros e multas automaticas</li>
+                            <li>Gere relatorios de inadimplencia</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/contas-receber.jpg" alt="Tela de Contas a Receber"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 9: Interface de contas a receber</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/baixar-conta.jpg" alt="Baixando Conta"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 10: Processo de baixa de conta</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/juros-cr.jpg" alt="Configuracao de Juros"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 11: Configuracao de juros e multas</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/revert-conta-receber.jpg" alt="Revertendo Conta a Receber"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 12: Revertendo operacao de conta a receber</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/reverter-conta-pagar.jpg" alt="Revertendo Conta a Pagar"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 13: Revertendo operacao de conta a pagar</div>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <strong>Dica:</strong> Configure alertas automaticos para contas vencidas e mantenha um controle rigoroso dos recebimentos.
+                    </div>
+                </div>
+                
+                <div id="relatorios" class="section">
+                    <h2>Relatorios</h2>
+                    <p>Relatorios gerenciais e fiscais para controle e analise dos dados.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4>Relatorios Fiscais</h4>
+                            <ul>
+                                <li>Relatorio de NF-e emitidas</li>
+                                <li>Relatorio de NFC-e emitidas</li>
+                                <li>Relatorio de devolucoes</li>
+                                <li>Relatorio de cancelamentos</li>
+                                <li>Relatorio de inutilizacoes</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Relatorios Gerenciais</h4>
+                            <ul>
+                                <li>Relatorio de vendas</li>
+                                <li>Relatorio de produtos</li>
+                                <li>Relatorio de clientes</li>
+                                <li>Relatorio de estoque</li>
+                                <li>Relatorio financeiro</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/abc.jpg" alt="Relatorio ABC"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 14: Relatorio de analise ABC</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/curva-abc.jpg" alt="Curva ABC"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 15: Curva ABC de produtos</div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="/images/raio.jpg" alt="Relatorio de Raio"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 16: Relatorio de raio de vendas</div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h3>Como Gerar Relatorios:</h3>
+                        <ol>
+                            <li>Acesse "Relatorios" no menu principal</li>
+                            <li>Selecione o tipo de relatorio desejado</li>
+                            <li>Configure os filtros:
+                                <ul>
+                                    <li>Periodo (data inicial e final)</li>
+                                    <li>Cliente (se aplicavel)</li>
+                                    <li>Produto (se aplicavel)</li>
+                                    <li>Status (se aplicavel)</li>
+                                </ul>
+                            </li>
+                            <li>Clique em "Gerar Relatorio"</li>
+                            <li>Visualize o relatorio na tela</li>
+                            <li>Imprima ou exporte (PDF, Excel)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div id="backup" class="section">
+                    <h2>Backup e Seguranca</h2>
+                    <p>Mantenha seus dados seguros com backups regulares e configuracoes de seguranca.</p>
+                    
+                    <div class="image-container">
+                        <img src="/images/backup.jpg" alt="Configuracao de Backup"> onerror="this.style.display='none'"
+                        <div class="image-caption">Figura 17: Configuracao de backup automatico</div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h3>Configurar Backup Automatico:</h3>
+                        <ol>
+                            <li>Acesse "Configuracoes > Backup"</li>
+                            <li>Defina a frequencia do backup (diario, semanal)</li>
+                            <li>Escolha o local de destino do backup</li>
+                            <li>Configure a retencao dos arquivos</li>
+                            <li>Ative o backup automatico</li>
+                            <li>Teste o processo de backup</li>
+                            <li>Configure notificacoes de backup</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <strong>Importante:</strong> Sempre mantenha backup dos dados e certifique-se de que o certificado digital esta valido antes de emitir documentos fiscais.
+                    </div>
+                </div>
+                
+                <div id="dicas" class="section">
+                    <h2>Dicas e Truques</h2>
+                    <p>Dicas praticas para aproveitar ao maximo o sistema.</p>
+                    
+                    <div class="tip-box">
+                        <h3>Dicas de Produtividade:</h3>
+                        <ul>
+                            <li>Use atalhos de teclado para navegar mais rapidamente</li>
+                            <li>Configure favoritos para acessar funcoes frequentemente usadas</li>
+                            <li>Use a busca rapida para encontrar produtos e clientes</li>
+                            <li>Configure alertas de estoque baixo</li>
+                            <li>Faca backup regular dos dados</li>
+                            <li>Mantenha o sistema atualizado</li>
+                            <li>Use relatorios para tomar decisoes baseadas em dados</li>
+                            <li>Configure notificacoes por e-mail</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h3>Solucao de Problemas Comuns:</h3>
+                        <table class="table-modern">
+                            <tr>
+                                <th>Problema</th>
+                                <th>Causa</th>
+                                <th>Solucao</th>
+                            </tr>
+                            <tr>
+                                <td>NFe rejeitada</td>
+                                <td>Dados incorretos</td>
+                                <td>Verificar dados do destinatario</td>
+                            </tr>
+                            <tr>
+                                <td>Erro de certificado</td>
+                                <td>Certificado vencido</td>
+                                <td>Renovar certificado digital</td>
+                            </tr>
+                            <tr>
+                                <td>Sistema lento</td>
+                                <td>Muitos dados</td>
+                                <td>Fazer limpeza de dados antigos</td>
+                            </tr>
+                            <tr>
+                                <td>Impressao nao funciona</td>
+                                <td>Impressora offline</td>
+                                <td>Verificar conexao da impressora</td>
+                            </tr>
+                            <tr>
+                                <td>Erro de conexao</td>
+                                <td>Internet instavel</td>
+                                <td>Verificar conexao com internet</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <div class="footer">
+            <p>Manual Completo do Sistema ERP - Versao Atualizada</p>
+            <p>Para suporte tecnico, entre em contato com a equipe de suporte</p>
+        </div>
+    </div>
+    
+    <script>
+// NavegaÃ§Ã£o ativa
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-sidebar a');
+    const sections = document.querySelectorAll('.section');
+    
+    // Marcar link ativo baseado na seÃ§Ã£o visÃ­vel
+    function setActiveLink() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', setActiveLink);
+    
+    // Scroll suave para links internos
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Busca em tempo real
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = searchTerm === '' ? 'block' : 'none';
+                }
+            });
+        });
+    }
+    
+    // AnimaÃ§Ã£o de progresso
+    function updateProgress() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        
+        const progressBar = document.querySelector('.progress-fill');
+        if (progressBar) {
+            progressBar.style.width = scrollPercent + '%';
+        }
+    }
+    
+    window.addEventListener('scroll', updateProgress);
+});
+
+// Lazy loading para imagens
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+});
+</script>
+</body>
+</html>
+
+
+

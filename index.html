@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual do Sistema Host - Alphatech Sistemas</title>
+    <meta name="description" content="Manual interativo completo do Sistema Host desenvolvido pela Alphatech Sistemas">
+    <meta name="keywords" content="sistema host, manual, alphatech, gestão empresarial, vendas, fiscal">
+    <meta name="author" content="Alphatech Sistemas">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manual-sistema-host.netlify.app/">
+    <meta property="og:title" content="Manual do Sistema Host - Alphatech Sistemas">
+    <meta property="og:description" content="Manual interativo completo do Sistema Host">
+    <meta property="og:image" content="images/alphatech_sistema.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://manual-sistema-host.netlify.app/">
+    <meta property="twitter:title" content="Manual do Sistema Host - Alphatech Sistemas">
+    <meta property="twitter:description" content="Manual interativo completo do Sistema Host">
+    <meta property="twitter:image" content="images/alphatech_sistema.jpeg">
+    
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            background: white;
+            padding: 10px;
+            margin: 0 auto 2rem;
+            display: block;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-secondary:hover {
+            background: white;
+            color: #2563eb;
+        }
+        .contact {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .contact p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        .loading {
+            display: none;
+            margin-top: 2rem;
+        }
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .feature h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .feature p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/images/alphatech_sistema.jpeg" alt="Alphatech Sistemas" class="logo"> onerror="this.style.display='none'"
+        
+        <h1>Manual do Sistema Host</h1>
+        <p>Soluções completas para gestão empresarial, controle de vendas, emissão fiscal e relatórios gerenciais.</p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>📊 Gestão Completa</h3>
+                <p>Vendas, estoque, financeiro</p>
+            </div>
+            <div class="feature">
+                <h3>📄 Fiscal</h3>
+                <p>NFe, NFCe, DAV</p>
+            </div>
+            <div class="feature">
+                <h3>📈 Relatórios</h3>
+                <p>Análises gerenciais</p>
+            </div>
+        </div>
+        
+        <div>
+            <a href="Manual_Completo_Sistema_Host.html" class="btn" onclick="showLoading()">
+                Acessar Manual Completo
+            </a>
+            <a href="https://wa.me/5581995945522" class="btn btn-secondary" target="_blank">
+                Falar no WhatsApp
+            </a>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Carregando manual...</p>
+        </div>
+        
+        <div class="contact">
+            <p><strong>Alphatech Sistemas</strong></p>
+            <p>📞 (81) 99594-5522</p>
+            <p>📱 WhatsApp: (81) 99594-5522</p>
+            <p>🕒 Seg-Sex: 8h-18h | Sáb-Dom: 8h-14h</p>
+        </div>
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+        
+        // Auto-redirect após 5 segundos se não clicar
+        setTimeout(() => {
+            if (document.getElementById('loading').style.display !== 'block') {
+                window.location.href = 'Manual_Completo_Sistema_Host.html';
+            }
+        }, 5000);
+    </script>
+</body>
+</html> 
+
+
+
+
+

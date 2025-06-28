@@ -1,0 +1,57 @@
+﻿MANUAL INTERATIVO DO SISTEMA ERP - VERSAO CORRIGIDA
+
+Arquivo criado: manual_interativo_corrigido\Manual_Interativo_ERP_Corrigido.html
+
+CORRECOES APLICADAS:
+âœ… Erros de sintaxe corrigidos
+âœ… Imagens reais incluÃ­das
+âœ… Caracteres especiais removidos
+âœ… Script otimizado
+
+IMAGENS INCLUIDAS:
+- nova-etiqueta.jpg (Criando nova etiqueta)
+- medidas-etiqueta.jpg (Configurando medidas)
+- adicionar-objeto-etiqueta.jpg (Adicionando objetos)
+- config-etiqueta.jpg (Configuracao detalhada)
+- salvar-etiqueta.jpg (Salvando etiqueta)
+- exemplo-etiqueta-gondola.jpg (Exemplo de etiqueta)
+- config-checkout.png (Configuracao de balanca)
+- gera-balanca.jpg (Gerando arquivo para balanca)
+- contas-receber.jpg (Interface financeira)
+- baixar-conta.jpg (Baixa de conta)
+- juros-cr.jpg (Configuracao de juros)
+- revert-conta-receber.jpg (Reversao de conta)
+- reverter-conta-pagar.jpg (Reversao de conta a pagar)
+- abc.jpg (Relatorio ABC)
+- curva-abc.jpg (Curva ABC)
+- raio.jpg (Relatorio de raio)
+- backup.jpg (Configuracao de backup)
+
+CARACTERISTICAS DO MANUAL:
+âœ… Design moderno e responsivo
+âœ… Navegacao lateral interativa
+âœ… Busca em tempo real
+âœ… AnimaÃ§Ãµes e efeitos visuais
+âœ… Barra de progresso
+âœ… Layout adaptativo para mobile
+âœ… Imagens com lazy loading
+
+FUNCIONALIDADES INCLUIDAS:
+- Etiquetas Personalizadas (com imagens detalhadas)
+- Configuracao de Balanca
+- Modulo Financeiro (contas a pagar/receber)
+- Relatorios Gerenciais
+- Backup e Seguranca
+- Dicas e Solucao de Problemas
+
+COMO USAR:
+1. Abra o arquivo HTML no navegador
+2. Use a navegacao lateral para acessar as secoes
+3. Use a busca para encontrar informacoes especificas
+4. As imagens aparecem automaticamente
+
+CONVERSAO PARA PDF:
+1. Abra no Chrome/Edge
+2. Ctrl+P > Salvar como PDF
+3. Marque 'Imprimir imagens de fundo'
+4. Configure margens minimas
